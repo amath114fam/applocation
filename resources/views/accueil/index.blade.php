@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "p-VsWUfkCTOpqFwV2",
+      });
+   })();
+</script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="#" class="logo"><span>FAM'S </span>CARS</a>
+        <ul>
+            <i class="fa-solid fa-xmark" id="exit"></i>
+            <li><a href="#header" class="active">Accueil</a></li>
+            <li><a href="#propo">A propos</a></li>
+            <li><a href="#contacte">Nous Contacter</a></li>
+            <li><a href="/dashboards">Location/Profil</a></li>
+            <li><a href="/dashboards">Connexion</a></li>
+        </ul>
+                <i class="fa-solid fa-bars" id="icon"></i>
+    </div>
+    <section class="header" id="header">
+        <div class="headerDescript">
+            <h1 >Bienvenue chez <span>FAM'S </span>CARS</h1>
+            <p>Nous sommes votre partenaire de confiance pour la location de voitures, offrant une large gamme de véhicules pour répondre à tous vos besoins de déplacement.</p>
+            <a class="animated-text" href="">FAM'S CARS,le meilleur dans ce domaine</a>
+        </div>
+        <img class="headerImg" src="assets/images/baniere1.png" alt="">
+    </section>
+    <section class="descript" id="descript">
+        <div class="sectionVoiture">
+            <h1>DES VOITURES <span>DE QUALITÉ</span></h1>
+        </div>
+        <div class="oscillating-dots">
+          <div class="dot"></div>
+          <div id="dot" class="dot"></div>
+          <div class="dot"></div>
+        </div>
+    </section>
+    <section class="voiture" id="voiture">
+        <div class="cart-voiture">
+            <img src="assets/images/voiture20.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Audi</h2>
+                <h5>Carburant : Essence</h5>
+                <p>272 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture2.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Chevrolet</h2>
+                <h5>Carburant : Essence</h5>
+                <p>250 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture3.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Ford</h2>
+                <h5>Carburant : Essence</h5>
+                <p>255 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture4.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Hyundai</h2>
+                <h5>Carburant : Essence</h5>
+                <p>272 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture5.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Opel</h2>
+                <h5>Carburant : Essence</h5>
+                <p>204 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture6.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Fiat</h2>
+                <h5>Carburant : Essence</h5>
+                <p>255 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture18.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Volkswagen</h2>
+                <h5>Carburant : Hybride Rechargeable</h5>
+                <p>230 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture17.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Peugeot</h2>
+                <h5>Carburant : Essence</h5>
+                <p>250 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture10.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Renault</h2>
+                <h5>Carburant : Essence</h5>
+                <p>255 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture11.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Alfa Romeo</h2>
+                <h5>Carburant : Essence</h5>
+                <p>250 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture14.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Chevrolet</h2>
+                <h5>Carburant : Essence</h5>
+                <p>312 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture24.jpg" alt="" >
+            <div class="cart-car">
+                <h2>Mercedes-Benz</h2>
+                <h5>Carburant : Essence/Diesel</h5>
+                <p>250 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture25.jpg" alt="">
+            <div class="cart-car">
+                <h2>Nissan</h2>
+                <h5>Carburant : Électrique</h5>
+                <p>150 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture26.jpg" alt="">
+            <div class="cart-car">
+                <h2>Toyota</h2>
+                <h5>Carburant : Électrique</h5>
+                <p>150 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+        <div class="cart-voiture">
+            <img src="assets/images/voiture19.jpg" alt="">
+            <div class="cart-car">
+                <h2>Bmw</h2>
+                <h5>Carburant : Électrique</h5>
+                <p>150 (km/h)</p>
+                <p>15000FCFA/jour</p>
+            </div>
+        </div>
+    </section>
+    <div class="experiences">
+        <h1>A PROPOS DE <span>FAM'S CARS</span></h1>
+        <div class="oscillating-dots">
+          <div class="dot"></div>
+          <div id="dot" class="dot"></div>
+          <div class="dot"></div>
+        </div>
+    </div>
+    <section class="propos" id="propo">
+        <div class="textPropos">
+            <h1>Pourquoi nous?</h1>
+            <p>Chez <span>FAM'S CARS</span>, nous nous engageons à offrir une expérience de location de voiture inégalée. Notre flotte diversifiée répond à tous vos besoins, qu'il s'agisse d'un voyage d'affaires ou d'une escapade en famille. Nous garantissons des véhicules impeccables, régulièrement entretenus pour votre sécurité et votre confort.</p>
+            <p>Notre équipe professionnelle est à votre écoute, prête à vous conseiller sur le choix du véhicule idéal. Avec des tarifs compétitifs et transparents, il n'y a pas de frais cachés. De plus, notre processus de réservation rapide et facile vous permet de gagner du temps.</p>
+            <p>Choisir <span>FAM'S CARS</span>, c'est opter pour la fiabilité, la qualité de service et une passion pour la mobilité. Faites confiance à notre expertise pour rendre vos trajets agréables et sans stress.</p>
+        </div>
+        <img src="assets/images/baniere1.png" alt="">
+    </section>
+    <div class="client">
+        <h1>NOS <span>CLIENTS</span></h1>
+    </div>
+    <section class="reactClient">
+        <div class="client-content">
+            <img src="assets/images/client1.jpg" alt="">
+            <h2>Wizzy</h2>
+            <p>"FAMTRANSPORT a transformé notre road trip en une expérience incroyable avec des voitures confortables et un service exceptionnel "</p>
+        </div>
+        <div class="client-content">
+            <img src="assets/images/client2.jpg" alt="">
+            <h2>Elhadj</h2>
+            <p>"Un service rapide et professionnel, FAMTRANSPORT a dépassé nos attentes lors de notre réservation de véhicule"</p>
+        </div>
+        <div class="client-content">
+            <img src="assets/images/client3.jpg" alt="">
+            <h2>Ben Alain</h2>
+            <p>"Nous avons loué une voiture pour nos vacances et tout a été parfait, de la réservation à la restitution. Merci FAMTRANSPORT"</p>
+        </div>
+    </section>
+    <div class="client">
+        <h1>NOUS <span>CONTACTER</span></h1>
+    </div>
+    <section class="contact" id="contacte">
+        <div class="carte">
+         <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.2240361457466!2d-17.449271026292706!3d14.756404273245932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec10d17202daf73%3A0xe1d59c208f514922!2sTerrain%20ACAPES!5e0!3m2!1sfr!2ssn!4v1747262349513!5m2!1sfr!2ssn" width="400" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      <form action="">
+          <p>Envoyer-nous un message</p>
+          <input type="text" id="nom" name="name" placeholder="Votre nom">
+          <input type="text" id="mail" name="email" placeholder="Votre email">
+          <textarea id="texter" name="message" placeholder="Votre message"></textarea>
+          <button type="submit"  onclick="sendMail()">ENVOYER LE MESSAGE</button>
+      </form>  
+    </section>
+    <section class="piedPage">
+    <div class="foot-content">
+        <h4>FAM'S CAR</h4>
+        <div class="traitFoot"></div>
+        <p>Nous sommes une entreprise <br>
+            dédiée à l'optimisation <br>
+            des solutions de transport. </p>
+    </div>
+    <div class="foot-content">
+        <h4>Liens rapides</h4>
+        <div class="traitFoot"></div>
+        <div class="link">
+            <ul>
+                <li><a href="#header">Accueil</a></li>
+                <li><a href="#propo">A propos</a></li>
+                <li><a href="#contacte">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot-content">
+        <h4>Contactez-nous</h4>
+        <div class="traitFoot"></div>
+        <p>Parcelles Assainies En face terrain Acapes</p>
+        <p>amathfam2002@gmail.com.com</p>
+        <p>+221 708648515</p>
+    </div>
+</section>
+<div class="copyright">
+        <p>© 2025 Tous droits réservés. Conçu par</p>
+        <ul>
+            <li><a href="">Mentions légales</a></li>
+            <li><a href="">Politique de confidentialité</a></li>
+            <li><a href="">Conditions d'utilisation</a></li>
+        </ul>
+    </div>
+    <script>
+        const icon=document.getElementById("icon");
+        const xmark=document.getElementById("exit");
+        const ul=document.querySelector(".nav ul");
+        icon.addEventListener("click",()=>{
+        ul.style.right="0%";
+        icon.style.display="none"
+     })
+     xmark.addEventListener("click",()=>{
+        ul.style.right="-100%";
+        icon.style.display="block"
+     })
+
+
+     function sendMail(){
+    let params={
+      name:document.getElementById("nom").value,
+      email:document.getElementById("mail").value,
+      message:document.getElementById("texter").value,
+    }
+    emailjs.send("service_1r7fyyv","template_4x8um8f",params).then(alert("Message envoyé avec succès"));
+  }
+
+
+  document.addEventListener('scroll', function() {
+    const img = document.querySelector('.propos img');
+    const imgPosition = img.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.9; 
+
+    if (imgPosition < screenPosition) {
+        img.classList.add('visible');
+    }
+});
+    </script>
+</body>
+</html>
