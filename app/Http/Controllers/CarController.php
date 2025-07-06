@@ -3,20 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
-use App\Models\User;
-use App\Models\Accueil;
-use App\Models\Voiture;
 use Illuminate\Http\Request;
 
-class AccueilController extends Controller
+class CarController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $cars=Car::all();
-        return view('accueil.index',compact('cars'));
+        return view('voitures.car');
     }
 
     /**
@@ -24,7 +20,7 @@ class AccueilController extends Controller
      */
     public function create()
     {
-        return view('accueil.list');
+        
     }
 
     /**
@@ -32,21 +28,32 @@ class AccueilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+        'marque' => 'required',
+        'modele' => 'required',
+        'matricule' => 'required',
+        'prix' => 'required',
+        'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', 
+    ]);
+    if ($request->hasFile('image')) {
+        $path = $request->file('image')->store('photos', 'public'); 
+    }
+    Car::create(array_merge($request->all(), ['image' => $path]));
+    return redirect()->route('affiche');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Accueil $accueil)
+    public function show(Car $car)
     {
-        //
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Accueil $accueil)
+    public function edit(Car $car)
     {
         //
     }
@@ -54,7 +61,7 @@ class AccueilController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Accueil $accueil)
+    public function update(Request $request, Car $car)
     {
         //
     }
@@ -62,7 +69,7 @@ class AccueilController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Accueil $accueil)
+    public function destroy(Car $car)
     {
         //
     }

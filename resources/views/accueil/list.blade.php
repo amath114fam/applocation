@@ -22,6 +22,7 @@
       <th scope="col">Email</th>
       <th scope="col">Marque</th>
       <th scope="col">Modèle</th>
+      <th scope="col">Image</th>
       <th scope="col">Date de Début</th>
       <th scope="col">Date de Fin</th>
       <th scope="col">Paiement</th>
@@ -34,6 +35,7 @@
       <th scope="row">{{$user->email}}</th>
       <td>{{$location->voitures->marque}}</td>
       <td>{{$location->voitures->modele}}</td>
+      <td><img id="imageList" src="{{ asset('storage/' . $location->voitures->image) }}" alt="" ></td>
       <td>{{$location->datedebut}}</td>
       <td>{{$location->datefin}}</td>
       <td><span class="badge rounded-pill text-bg-info">{{$location->paiements->statut}}</span></td>

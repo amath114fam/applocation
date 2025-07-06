@@ -27,7 +27,22 @@
             <li><a href="#propo">A propos</a></li>
             <li><a href="#contacte">Nous Contacter</a></li>
             <li><a href="/dashboards">Location/Profil</a></li>
-            <li><a href="/dashboards">Connexion</a></li>
+            @guest
+            <li><a href="/login">Connexion</a></li>
+            @endguest
+            @auth
+            <li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        <span id="spano">{{ __('Déconnexion') }}</span>
+                    </x-responsive-nav-link>
+                </form>
+            </li>
+            @endauth
         </ul>
                 <i class="fa-solid fa-bars" id="icon"></i>
     </div>
@@ -50,141 +65,18 @@
         </div>
     </section>
     <section class="voiture" id="voiture">
+         @foreach($cars as $car)
         <div class="cart-voiture">
-            <img src="assets/images/voiture20.jpg" alt="" >
+            <img src="{{ asset('storage/' . $car->image) }}" alt="" >
             <div class="cart-car">
-                <h2>Audi</h2>
-                <h5>Carburant : Essence</h5>
-                <p>272 (km/h)</p>
-                <p>15000FCFA/jour</p>
+                <h2>Marque: {{$car->marque}}</h2>
+                <p><strong>Modèle: {{$car->modele}}</strong></p>
+                <p><strong>Matricule: {{$car->matricule}}</strong></p>
+                <p><strong>Prix: {{$car->prix}} FCFA</strong></p>
+                <a href="{{route('voiture.create',$car->id)}}">louer</a>
             </div>
         </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture2.jpg" alt="" >
-            <div class="cart-car">
-                <h2>Chevrolet</h2>
-                <h5>Carburant : Essence</h5>
-                <p>250 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture3.jpg" alt="" >
-            <div class="cart-car">
-                <h2>Ford</h2>
-                <h5>Carburant : Essence</h5>
-                <p>255 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture4.jpg" alt="" >
-            <div class="cart-car">
-                <h2>Hyundai</h2>
-                <h5>Carburant : Essence</h5>
-                <p>272 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture5.jpg" alt="" >
-            <div class="cart-car">
-                <h2>Opel</h2>
-                <h5>Carburant : Essence</h5>
-                <p>204 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture6.jpg" alt="" >
-            <div class="cart-car">
-                <h2>Fiat</h2>
-                <h5>Carburant : Essence</h5>
-                <p>255 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture18.jpg" alt="" >
-            <div class="cart-car">
-                <h2>Volkswagen</h2>
-                <h5>Carburant : Hybride Rechargeable</h5>
-                <p>230 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture17.jpg" alt="" >
-            <div class="cart-car">
-                <h2>Peugeot</h2>
-                <h5>Carburant : Essence</h5>
-                <p>250 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture10.jpg" alt="" >
-            <div class="cart-car">
-                <h2>Renault</h2>
-                <h5>Carburant : Essence</h5>
-                <p>255 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture11.jpg" alt="" >
-            <div class="cart-car">
-                <h2>Alfa Romeo</h2>
-                <h5>Carburant : Essence</h5>
-                <p>250 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture14.jpg" alt="" >
-            <div class="cart-car">
-                <h2>Chevrolet</h2>
-                <h5>Carburant : Essence</h5>
-                <p>312 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture24.jpg" alt="" >
-            <div class="cart-car">
-                <h2>Mercedes-Benz</h2>
-                <h5>Carburant : Essence/Diesel</h5>
-                <p>250 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture25.jpg" alt="">
-            <div class="cart-car">
-                <h2>Nissan</h2>
-                <h5>Carburant : Électrique</h5>
-                <p>150 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture26.jpg" alt="">
-            <div class="cart-car">
-                <h2>Toyota</h2>
-                <h5>Carburant : Électrique</h5>
-                <p>150 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
-        <div class="cart-voiture">
-            <img src="assets/images/voiture19.jpg" alt="">
-            <div class="cart-car">
-                <h2>Bmw</h2>
-                <h5>Carburant : Électrique</h5>
-                <p>150 (km/h)</p>
-                <p>15000FCFA/jour</p>
-            </div>
-        </div>
+         @endforeach
     </section>
     <div class="experiences">
         <h1>A PROPOS DE <span>FAM'S CARS</span></h1>

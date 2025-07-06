@@ -13,7 +13,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        return view('accueil.test');
+        
     }
 
     /**
@@ -34,10 +34,10 @@ class LocationController extends Controller
             'datefin'=>'required',
             'statuts'=>'required',
             'user_id'=>'required',
-            'voitures_id'=>'required',
+            'voitures_id',
         ]);
         // Paiement::create($request->all());
-        Location::create($request->all());
+        $request->session()->put('location_data', $request->all());
         return redirect()->route('paiement.create');
     }
 

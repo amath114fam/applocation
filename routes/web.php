@@ -1,28 +1,28 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VoitureController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PaiementController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UtilisateurController;
 
-Route::get('/', function () {
-    return view('accueil.index');
-})->name('affiche');
 
+Route::get('/', [AccueilController::class, 'index'])->name('affiche');
 
 Route::get('/login', function () {
     return redirect()->route('login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-Route::get('/dashboards', function () {
-    return view('dashboards');
-})->middleware(['auth', 'verified'])->name('dashboards');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])
+->middleware('auth','admin')->name('dashboard');
+Route::get('/affiche', [AccueilController::class, 'index'])
+->middleware('auth')->name('affiche');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
 Route::get('creqteqccueil', [AccueilController::class, 'create']);
 Route::post('store', [VoitureController::class, 'store'])->name('voiture.store');
-Route::get('create', [VoitureController::class, 'create'])->name('voiture.create');
+Route::get('create/{car}', [VoitureController::class, 'index'])->name('voiture.create');
 Route::post('saved', [UtilisateurController::class, 'store'])->name('Utilisateur.store');
 Route::get('usve', [UtilisateurController::class, 'index'])->name('Utilisateur.index');
 Route::get('list', [UtilisateurController::class, 'create'])->name('Utilisateur.create');
@@ -48,5 +48,9 @@ Route::delete('locations/{location}', [LocationController::class, 'destroy'])->n
 Route::post('locationstore', [LocationController::class, 'store'])->name('location.store');
 Route::get('show/{location}', [LocationController::class, 'show'])->name('location.show');
 });
+
+Route::post('enregistre', [CarController::class, 'store'])->name('car.store');
+Route::get('car', [CarController::class, 'index']);
+
 
 require __DIR__.'/auth.php';

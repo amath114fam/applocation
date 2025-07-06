@@ -19,12 +19,10 @@
          <label  for="">Date de Fin</label>
          <input  type="date" id="fin" name="datefin">
          <input type="hidden" id="statuts"  name="statuts">
-         @foreach($users as $user)
-         <input id="utilisateur" type="hidden" value="{{$user->id}}" name="user_id">
-         @endforeach
-        @foreach($voitures as $voiture)
-         <input type="hidden" id="voiture" value="{{$voiture->id}}"  name="voitures_id">
-         @endforeach
+         
+         <input id="utilisateur" type="hidden" value="{{$users['id']}}" name="user_id">
+
+         <input type="hidden" id="voiture" name="voitures_id">
        </div>
        <button class="button" type="submit" onclick="calculerMontant()">Suivant</button>
     </form>
@@ -35,7 +33,9 @@
             const dateFin = new Date(document.getElementById('fin').value);
             const differenceEnMillisecondes = dateFin - dateDebut;
             const differenceEnJours = differenceEnMillisecondes / (1000 * 3600 * 24);
-            const montant = differenceEnJours * 15000;
+
+            const valeurTarif = localStorage.getItem('tarif');
+            const montant = differenceEnJours * valeurTarif;
 
             localStorage.setItem('montant', montant);
         }

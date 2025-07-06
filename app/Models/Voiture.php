@@ -9,7 +9,9 @@ class Voiture extends Model
     protected $fillable=[
         'marque',
         'modele',
-        'matricule'
+        'matricule',
+        'prix',
+        'image'
     ];
      public function locations(){
         return $this->HasMany(Location::class);

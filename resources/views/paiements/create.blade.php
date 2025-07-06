@@ -16,17 +16,10 @@
         <div class="user">
          <label for="">Date de paiement</label>
          <input type="date" name="datedepaiement">
-        <!-- <label for="operateur">Opérateur:</label>
-        <select id="operateur" required>
-            <option value="wave">Wave</option>
-            <option value="orange">Orange</option>
-        </select> -->
          <label for="">Montant</label>
          <input type="text" id="montant"  name="montant" readonly>
          <input type="hidden" class="statut" name="statut">
-         @foreach($locations as $location)
-         <input type="hidden" value="{{$location->id}}" name="location_id">
-         @endforeach
+         <input type="hidden" name="location_id">
        </div>
        <button class="button" type="submit">Valider</button>
     </form>

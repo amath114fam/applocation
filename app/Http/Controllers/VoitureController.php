@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use App\Models\Voiture;
 use Illuminate\Http\Request;
 
@@ -10,9 +11,9 @@ class VoitureController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Car $car)
     {
-       
+       return view('voitures.create',compact('car'));
     }
 
     /**
@@ -20,7 +21,7 @@ class VoitureController extends Controller
      */
     public function create()
     {
-       return view('voitures.create');
+
     }
 
     /**
@@ -31,9 +32,12 @@ class VoitureController extends Controller
         $request->validate([
             'marque'=>'required',
             'modele'=>'required',
+            'matricule'=>'required',
+            'prix'=>'required',
+            'image'=>'required',
         ]);
         // Paiement::create($request->all());
-        voiture::create($request->all());
+        $request->session()->put('voiture_data', $request->all());
         return redirect()->route('Utilisateur.index');
     }
 

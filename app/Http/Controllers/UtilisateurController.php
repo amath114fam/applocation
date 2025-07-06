@@ -18,7 +18,7 @@ class UtilisateurController extends Controller
     public function index()
     {
         $voitures=Voiture::all();
-        $users=User::all();
+        $users = Auth::user();
         return view('accueil.test',compact('users','voitures'));
     }
 

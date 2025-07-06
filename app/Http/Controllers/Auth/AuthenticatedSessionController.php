@@ -36,8 +36,14 @@ class AuthenticatedSessionController extends Controller
     }
 
         $request->session()->regenerate();
+         $user = Auth::user(); // Récupérer l'utilisateur connecté
 
-        return redirect()->intended(route('affiche', absolute: false));
+    if ($user->hasRole('admin')) {
+        return redirect()->route('dashboard'); // Redirigez vers le tableau de bord
+    } else {
+        return redirect()->route('affiche'); // Redirigez vers la page pour les utilisateurs
+    }
+
     }
 
     /**

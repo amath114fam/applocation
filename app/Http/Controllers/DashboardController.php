@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\DashAdmin;
 use Illuminate\Http\Request;
+use App\Http\Controllers\DashboardController;
 
-class DashAdminController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view("accueil.look");
     }
 
     /**
