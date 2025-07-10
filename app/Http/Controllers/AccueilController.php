@@ -16,7 +16,8 @@ class AccueilController extends Controller
     public function index()
     {
         $cars=Car::all();
-        return view('accueil.index',compact('cars'));
+        $matriculesFromCars = Voiture::pluck('matricule')->unique();
+        return view('accueil.index',compact('cars','matriculesFromCars'));
     }
 
     /**

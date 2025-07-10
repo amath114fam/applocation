@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
+use App\Models\Voiture;
+use App\Models\Location;
 use App\Models\DashAdmin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DashboardController;
 
 class DashboardController extends Controller
@@ -13,7 +17,23 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view("accueil.look");
+        $user = Auth::user();
+        
+        $locations = $user->locations()->with(['paiements', 'voitures'])->get();
+         
+        $userlocations = Location::with(['user','paiements'])->get();
+
+        $cars=Car::all();
+
+        $carNumber=Car::count();
+
+        $matriculesFromCars = Car::pluck('matricule');
+
+        $countMatricules = Voiture::whereIn('matricule', $matriculesFromCars)->count();
+
+        $restCar= $carNumber - $countMatricules;
+
+        return view("accueil.look",compact('locations','user', 'cars', 'userlocations','carNumber','countMatricules','restCar'));
     }
 
     /**

@@ -50,7 +50,8 @@ Route::get('show/{location}', [LocationController::class, 'show'])->name('locati
 });
 
 Route::post('enregistre', [CarController::class, 'store'])->name('car.store');
-Route::get('car', [CarController::class, 'index']);
+Route::get('car', [CarController::class, 'index'])->name('car.index');
+Route::delete('car/{car}', [CarController::class, 'destroy'])->name('car.destroy');
 
 
 require __DIR__.'/auth.php';

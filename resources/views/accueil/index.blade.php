@@ -73,7 +73,13 @@
                 <p><strong>Modèle: {{$car->modele}}</strong></p>
                 <p><strong>Matricule: {{$car->matricule}}</strong></p>
                 <p><strong>Prix: {{$car->prix}} FCFA</strong></p>
+                @if($matriculesFromCars->contains($car->matricule))
+                <p style="color:red"><strong>Voiture indisponible</strong></p>
+                <a >louer</a>
+                @else
+                <p style="color:green"><strong>Voiture disponible</strong></p>
                 <a href="{{route('voiture.create',$car->id)}}">louer</a>
+                @endif
             </div>
         </div>
          @endforeach
@@ -120,7 +126,7 @@
     </div>
     <section class="contact" id="contacte">
         <div class="carte">
-         <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.2240361457466!2d-17.449271026292706!3d14.756404273245932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec10d17202daf73%3A0xe1d59c208f514922!2sTerrain%20ACAPES!5e0!3m2!1sfr!2ssn!4v1747262349513!5m2!1sfr!2ssn" width="400" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.2240361457466!2d-17.449271026292706!3d14.756404273245932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec10d17202daf73%3A0xe1d59c208f514922!2sTerrain%20ACAPES!5e0!3m2!1sfr!2ssn!4v1747262349513!5m2!1sfr!2ssn"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       <form action="">
           <p>Envoyer-nous un message</p>
