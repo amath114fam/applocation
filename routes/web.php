@@ -17,6 +17,9 @@ Route::get('/login', function () {
     return redirect()->route('login');
 });
 
+Route::get('/dashboards', [VoitureController::class, 'create'])->name('voiture.create');
+
+
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
 ->middleware('auth','admin')->name('dashboard');

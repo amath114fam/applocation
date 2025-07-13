@@ -83,7 +83,7 @@ a{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(17rem,1fr));
     background: linear-gradient(to left, #3374FF,#fff);
-    height: 100vh;
+    height: 100%;
 }
 .headerDescript{
     display: flex;
@@ -130,7 +130,7 @@ a{
     align-items: center;
     grid-template-columns: repeat(auto-fit,minmax(17rem,1fr));
     background: #fff;
-    min-height: 100vh;
+    height: 100%;
     gap: 1.5rem;
 }
 .cart-voiture{
@@ -178,6 +178,7 @@ a{
     padding: 20px 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    height: 100%;
     gap: 1.5rem;
 }
 .propos img {
@@ -204,7 +205,7 @@ a{
 
 .client h1{
     text-align: center;
-     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 .client h1 span{
     color: #3374FF;
@@ -213,6 +214,7 @@ a{
     padding: 20px 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,auto));
+    height: 100%;
     gap: 1.5rem;
 }
 .reactClient img{
@@ -306,6 +308,7 @@ form .compte{
 }
 .location{
     padding: 50px;
+    position: relative;
 }
 .location form{
     display: grid;
@@ -345,7 +348,7 @@ form .compte{
     width: 10%;
     position: absolute;
     right: 5%;
-    bottom: 20%;
+    bottom: 0;
     cursor: pointer;
 }
 /* ***************************************formselect********************************************* */
@@ -458,6 +461,19 @@ form .compte{
     padding-left: 1rem;
     color: black;
 }
+#reseau{
+display: flex;
+align-items: center;
+flex-direction: row;
+}
+#reseau li a{
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  padding: 10px;
+  color: black;
+}
 .copyright{
     display: flex;
     align-items: center;
@@ -477,7 +493,7 @@ form .compte{
 }
 .piedPage{
     background: #3374FF;
-        background-size: cover;
+    background-size: cover;
 }
 .foot-content p{
     color: white;
@@ -598,7 +614,15 @@ form .compte{
     background: #3374FF;
     box-shadow: 2px 2px 10px 2px rgb(0, 0, 0.2);
 }
+.login-form{
+  
+}
 /* ******************************************media************************************************** */
+@media (max-width:1290px){
+.contact{
+    height: 100%;
+}
+}
 @media (max-width:1216px){
     .header{
     padding: 20px 80px;
@@ -635,6 +659,50 @@ form .compte{
     margin-left: 30%; 
   }
 }
+@media (max-width:1030px){
+     .header{
+    padding: 20px 80px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to left, #3374FF,#fff);
+    height: 100%;
+  }
+  .propos{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .propos img{
+    gap: 0.5rem;
+    width: 350px;
+    margin-left: 30%;
+  }
+  .contact{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height:100%; 
+  }
+  .contact .carte{
+    margin-left: 10%;
+  }
+  #maps{
+    width: 800px;
+  }
+  .contact form{
+    width: 800px;
+    margin: auto;
+  }
+  .cart-car a{
+    width: 6rem;
+    background-color: #3374FF;
+    padding: 0.5rem;
+}
+ #img-login{
+    display: none;
+  }
+}
 @media (max-width:978px){
     .contact{
     padding: 0;
@@ -648,6 +716,9 @@ form .compte{
   .contact form{
     margin-left: 20%; 
   }
+   #img-login{
+    display: none;
+  }
 }
 @media (max-width:884px){
     .nav ul{
@@ -656,11 +727,12 @@ form .compte{
         align-items: center;
         gap: 1rem;
         flex-direction: column;
-        background: #3374FF;
+        background: linear-gradient(to left, #3374FF,#fff);
         padding: 20px 20px;
-        position: fixed;
+        position: absolute;
         right: -100%;
-        top: 10%;
+        border-radius: 10px;
+        top: 110%;
     }
     .nav .spane{
         transition: 0.5s all ease;
@@ -701,19 +773,87 @@ form .compte{
     font-weight: 600;
     color: #fff;
 }
+ #img-login{
+    display: none;
+  }
 }
-@media (max-width:754px){
+@media (max-width:835px){
+.header{
+    padding: 20px 80px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to left, #3374FF,#fff);
+    height: 100%;
+  }
+   .cart-car a{
+    width: 7rem;
+    background-color: #3374FF;
+    padding: 0.3rem;
+}
+ .propos{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .propos img{
+    gap: 0.5rem;
+    width: 350px;
+    margin-left: 30%;
+  }
+  .contact{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height:100%; 
+  }
+  #maps{
+    margin-left: -60px;
+  }
+  .contact form{
+    width: 700px;
+    margin: auto;
+  }
+  .copyright ul li a{
+    font-size: 10px;
+    text-wrap: nowrap;
+}
+ #img-login{
+    display: none;
+  }
+}
+@media (max-width:810px){
+#maps{
+    margin-left: -120px;
+    width: 700px;
+  }
+  .contact form{
+    width: 700px;
+    margin: auto;
+  }
+   #img-login{
+    display: none;
+  }
+}
+@media (max-width:770px){
     .contact{
     padding: 0;
     display: flex;
     flex-direction: column;
-    height:200vh; 
+    height:100%; 
+  }
+  #maps{
+   margin-left: -100px;
   }
   .contact .carte{
     margin-left: 25%;
   }
   .contact form{
-    margin-left: 10%; 
+     width: 700px;
+    margin: auto;
+  }
+   #img-login{
+    display: none;
   }
 }
 @media (max-width:652px){
@@ -729,6 +869,9 @@ form .compte{
   .contact form{
     margin-left: 5%; 
   }
+   #img-login{
+    display: none;
+  }
 }
 @media (max-width:610px){
      .contact{
@@ -736,9 +879,6 @@ form .compte{
     display: flex;
     flex-direction: column;
     height:200vh; 
-  }
-  .contact .carte{
-    margin-left: 15%;
   }
   .contact form{
     margin-left: 1%; 
@@ -749,16 +889,38 @@ form .compte{
 }
 @media (max-width:610px){
      .contact{
-    padding: 0;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    height:200vh; 
+    height:100%; 
+  }
+  .header img{
+    width: 350px;
+    margin-left: 15%;
+  }
+  .propos img{
+    gap: 0.5rem;
+    width: 350px;
+    margin-left: 15%;
+  }
+  #maps{
+    width: 500px;
+    margin-left: 30px;
   }
   .contact .carte{
-    margin-left: 12%;
+   margin: auto;
   }
   .contact form{
-    margin-left: 1%; 
+     width: 500px;
+    margin: auto;
+  }
+  .copyright{
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+ #img-login{
+    display: none;
   }
 }
 @media (max-width:582px){
@@ -792,6 +954,9 @@ form .compte{
     width: 250px;
     margin-left: 20%;
   }
+  #img-login{
+    display: none;
+  }
 }
 @media (max-width:529px){
      .contact{
@@ -819,41 +984,96 @@ form .compte{
   #table{
     width: 450px;
   }
+   #img-login{
+    display: none;
+  }
 }
-@media (max-width:414px){
+@media (max-width:430px){
+    .logo{
+        margin-left: -2rem;
+    }
      .header{
-    padding: 20px 80px;
+    padding: 20px 50px;
     display: flex;
     flex-direction: column;
     background: linear-gradient(to left, #3374FF,#fff);
-    height: 60vh;
+    height: 100%;
+  }
+  .header h1{
+    font-size: 20px;
   }
   .header img{
     width: 200px;
-    margin-left: 9%;
+    margin-left: 15%;
   }
+  .descript h1{
+    font-size: 20px;
+  }
+  .voiture{
+    height: 100%;
+    padding: 20px 50px;
+  }
+  .cart-car a{
+    width: 6rem;
+    background-color: #3374FF;
+    padding: 0.5rem;
+}
+.experiences h1{
+    font-size: 20px;
+}
+.propos{
+    height: 100%;
+}
   .propos img{
     gap: 0.5rem;
     width: 200px;
-    margin-left: 30%;
+    margin-left: 20%;
   }
+  .propos h1{
+    font-size: 15px;
+  }
+  .propos p{
+    font-size: 13px;
+  }
+.client h1{
+    font-size: 20px;
+}
     .contact{
-    padding: 0;
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
-    height:130vh; 
+    height:100%; 
   }
   .contact .carte{
-    margin-left: 1%;
+   width: 80%;
+   margin: auto;
+  }
+  #maps{
+    width: 350px;
+    margin-left: -9px;
   }
   .contact form{
     width: 350px;
     margin-left: 8%; 
   }
+  .contact form button{
+    width: 10rem;
+    font-size: 10px;
+  }
+.piedPage{
+    padding: 20px 20px;
+}
   .copyright ul{
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+}
+.copyright ul li a{
+    font-size: 8px;
+    text-wrap: nowrap;
+}
+.copyright{
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
 }
 .button{
     font-size: 1rem;
@@ -867,56 +1087,78 @@ form .compte{
     border-radius: 30px;
     width: 30%;
     position: absolute;
-    right: 8%;
-    bottom: 45%;
+    right: 1%;
+    bottom: 0;
     cursor: pointer;
 }
+ #img-login{
+    display: none;
 }
-@media (max-width:360px){
+}
+@media (max-width:395px){
+#maps{
+    width: 310px;
+    margin-left: 2px; 
+  }
+  .contact .carte{
+    margin: auto;
+  }
+  .contact form{
+    width: 310px;
+    margin: auto; 
+  }
+   #img-login{
+    display: none;
+  }
+}
+@media (max-width:385px){
      .header{
-    padding: 20px 80px;
+    padding: 20px 20px;
     display: flex;
     flex-direction: column;
     background: linear-gradient(to left, #3374FF,#fff);
-    height: 80vh;
+    height: 100%;
   }
   .header img{
     width: 200px;
-    margin-left: 9%;
+    margin-left: 20%;
   }
-  .cart-voiture{
-    margin-right: 15%;
+  .voiture{
+    height: 100%;
+    padding: 20px 20px;
   }
   .propos{
-    height: 120vh;
+    height: 100%;
   }
   .propos img{
     gap: 0.5rem;
     width: 200px;
-    margin-left: 30%;
+    margin-left: 20%;
   }
     .contact{
-    padding: 0;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    height:160vh; 
+    height:100%; 
   }
   #maps{
     width: 310px;
-    margin-left: 7%; 
+    margin-left: 5%; 
   }
   .contact .carte{
     margin-left: 1%;
   }
   .contact form{
     width: 310px;
-    margin-left: 7%; 
+    margin-left: 5%; 
   }
   .copyright ul{
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 0rem;
+    justify-content: space-around;
+}
+.copyright ul li a{
+    font-size: 6px;
+    text-wrap: nowrap;
 }
 .button{
     font-size: 1rem;
@@ -930,10 +1172,45 @@ form .compte{
     border-radius: 30px;
     width: 30%;
     position: absolute;
-    right: 8%;
-    bottom: 38%;
+    right: 1%;
+    bottom: 0;
     cursor: pointer;
 }
+ #img-login{
+    display: none;
+}
+}
+@media (max-width:325px){
+    .client-content{
+       margin-right: 20px;
+    }
+    .contact{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height:100%; 
+  }
+  #maps{
+    width: 300px;
+    margin-left: 5px; 
+  }
+  .contact .carte{
+    width: 100%;
+    margin: auto;
+  }
+  .contact form{
+    width: 300px;
+    margin: auto;
+  }
+  .location .user{
+    padding-right: 35px;
+  }
+  #lab{
+    text-wrap: nowrap;
+  }
+   #img-login{
+    display: none;
+  }
 }
   @media print {
     #no-print {

@@ -13,7 +13,7 @@
         <a href="#" class="logo"><span>FAM'S</span>CAR</a>
         <div class="spane">
         <i class="fa-solid fa-xmark" id="exit"></i>
-        <span class="contacter"><a href="{{route('profile.edit')}}">Mon profil</a></span>
+        <span class="contacter"><a href="/profile">Mon profil</a></span>
         <span class="contacter"><a href="{{route('affiche')}}">Accueil</a></span>
         <span class="contacter"><a href="/create">Louer</a></span>
         <span class="contacter"><a href="/list">Ma location</a></span>

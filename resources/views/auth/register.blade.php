@@ -8,7 +8,7 @@
 </head>
 <body>
     <section class="contact">
-        <div class="carte">
+        <div class="carte" id="img-login">
          <img src="assets/images/baniere1.png" alt="">
         </div>
       <form method="POST" action="{{ route('register') }}">

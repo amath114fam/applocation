@@ -21,7 +21,7 @@ class VoitureController extends Controller
      */
     public function create()
     {
-
+        return view('voitures.dashboards');
     }
 
     /**

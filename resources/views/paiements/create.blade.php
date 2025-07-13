@@ -14,7 +14,7 @@
     <form action="{{route('paiement.store')}}" method="POST">
         @csrf
         <div class="user">
-         <label for="">Date de paiement</label>
+         <label id="lab" for="">Date de paiement</label>
          <input type="date" name="datedepaiement">
          <label for="">Montant</label>
          <input type="text" id="montant"  name="montant" readonly>

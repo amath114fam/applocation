@@ -8,13 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="nav">
-        <a href="#" class="logo"><span>FAM'S</span>CAR</a>
-     <div class="spane">
-        <i class="fa-solid fa-xmark" id="exit"></i>
-        <span class="contacter"><a href="{{route('profile.edit')}}">Mon profil</a></span>
-        <span class="contacter"><a href="{{route('affiche')}}">Accueil</a></span>
-        <form method="POST" action="{{ route('logout') }}">
+     <div class="nav">
+        <a href="#" class="logo"><span>FAM'S </span>CARS</a>
+        <ul>
+            <i class="fa-solid fa-xmark" id="exit"></i>
+            <li><a href="{{route('profile.edit')}}" class="active">Mon profil</a></li>
+            <li><a href="{{route('affiche')}}">Accueil</a></li>
+            <li>
+                <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
@@ -23,15 +24,15 @@
                         <span id="spano">{{ __('Déconnexion') }}</span>
                     </x-responsive-nav-link>
                 </form>
-     </div>
+            </li>
+        </ul>  
         <i class="fa-solid fa-bars" id="icon"></i>
-
     </div>
    @yield('content')
    <script>
-        const icon=document.getElementById("icon");
+       const icon=document.getElementById("icon");
         const xmark=document.getElementById("exit");
-        const ul=document.querySelector(".spane");
+        const ul=document.querySelector(".nav ul");
         icon.addEventListener("click",()=>{
         ul.style.right="0%";
         icon.style.display="none"

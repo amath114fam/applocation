@@ -26,7 +26,7 @@
             <li><a href="#header" class="active">Accueil</a></li>
             <li><a href="#propo">A propos</a></li>
             <li><a href="#contacte">Nous Contacter</a></li>
-            <li><a href="/dashboards">Location/Profil</a></li>
+            <li><a href="/list">Location/Profil</a></li>
             @guest
             <li><a href="/login">Connexion</a></li>
             @endguest
@@ -50,7 +50,13 @@
         <div class="headerDescript">
             <h1 >Bienvenue chez <span>FAM'S </span>CARS</h1>
             <p>Nous sommes votre partenaire de confiance pour la location de voitures, offrant une large gamme de véhicules pour répondre à tous vos besoins de déplacement.</p>
-            <a class="animated-text" href="">FAM'S CARS,le meilleur dans ce domaine</a>
+            <!-- <a class="animated-text" href="">FAM'S CARS,le meilleur dans ce domaine</a> -->
+            <div class="sectionVoiture">
+              <h1 class="animated-text">Tout à votre<span> disposition</span></h1>
+            </div>
+            <div class="sectionVoiture">
+              <i >Cliquer sur <strong>Louer</strong> pour en profiter</i>
+            </div>
         </div>
         <img class="headerImg" src="assets/images/baniere1.png" alt="">
     </section>
@@ -152,6 +158,18 @@
                 <li><a href="#header">Accueil</a></li>
                 <li><a href="#propo">A propos</a></li>
                 <li><a href="#contacte">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot-content">
+        <h4>Réseaux sociaux</h4>
+        <div class="traitFoot"></div>
+        <div class="link">
+            <ul id="reseau">
+                <li><a href="https://www.facebook.com/share/1LxDb77iiJ/?mibextid=wwXIfr"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/lucas_jr_fam?igsh=azFkb3I1ZXJvbnA1&utm_source=qr"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/linkedin.com/in/amath-fam-178a22353"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="tel:+221708648515"><i class="fa-solid fa-phone"></i></a></li>
             </ul>
         </div>
     </div>
