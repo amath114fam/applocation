@@ -6,6 +6,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
@@ -60,35 +62,41 @@
         </div>
         <img class="headerImg" src="assets/images/baniere1.png" alt="">
     </section>
-    <section class="descript" id="descript">
-        <div class="sectionVoiture">
-            <h1>DES VOITURES <span>DE QUALITÉ</span></h1>
-        </div>
+     <div class="experiences">
+        <h1>DES VOITURES <span>DE QUALILÉ</span></h1>
         <div class="oscillating-dots">
           <div class="dot"></div>
           <div id="dot" class="dot"></div>
           <div class="dot"></div>
         </div>
-    </section>
+    </div>
     <section class="voiture" id="voiture">
-         @foreach($cars as $car)
-        <div class="cart-voiture">
-            <img src="{{ asset('storage/' . $car->image) }}" alt="" >
-            <div class="cart-car">
-                <h2>Marque: {{$car->marque}}</h2>
-                <p><strong>Modèle: {{$car->modele}}</strong></p>
-                <p><strong>Matricule: {{$car->matricule}}</strong></p>
-                <p><strong>Prix: {{$car->prix}} FCFA</strong></p>
-                @if($matriculesFromCars->contains($car->matricule))
-                <p style="color:red"><strong>Voiture indisponible</strong></p>
-                <a >louer</a>
-                @else
-                <p style="color:green"><strong>Voiture disponible</strong></p>
-                <a href="{{route('voiture.create',$car->id)}}">louer</a>
-                @endif
+       <div class="swiper">
+        <div class="swiper-wrapper">
+            @foreach($cars as $car)
+            <div class="swiper-slide">
+                <div class="cart-voiture">
+                    <img src="{{ asset('storage/' . $car->image) }}" alt="">
+                    <div class="cart-car">
+                        <h2>Marque: {{$car->marque}}</h2>
+                        <p><strong>Modèle: {{$car->modele}}</strong></p>
+                        <p><strong>Matricule: {{$car->matricule}}</strong></p>
+                        <p><strong>Prix: {{$car->prix}} FCFA</strong></p>
+                        @if($matriculesFromCars->contains($car->matricule))
+                        <p style="color:red"><strong>Voiture indisponible</strong></p>
+                        <a>louer</a>
+                        @else
+                        <p style="color:green"><strong>Voiture disponible</strong></p>
+                        <a href="{{route('voiture.create',$car->id)}}">louer</a>
+                        @endif
+                    </div>
+                </div>
             </div>
+            @endforeach
         </div>
-         @endforeach
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
     </section>
     <div class="experiences">
         <h1>A PROPOS DE <span>FAM'S CARS</span></h1>
@@ -107,8 +115,8 @@
         </div>
         <img src="assets/images/baniere1.png" alt="">
     </section>
-    <div class="client">
-        <h1>NOS <span>CLIENTS</span></h1>
+    <div class="experiences">
+        <h1>NOS <span>CLIENTS </span></h1>
     </div>
     <section class="reactClient">
         <div class="client-content">
@@ -127,7 +135,7 @@
             <p>"Nous avons loué une voiture pour nos vacances et tout a été parfait, de la réservation à la restitution. Merci FAMTRANSPORT"</p>
         </div>
     </section>
-    <div class="client">
+     <div class="experiences">
         <h1>NOUS <span>CONTACTER</span></h1>
     </div>
     <section class="contact" id="contacte">
@@ -222,6 +230,34 @@
         img.classList.add('visible');
     }
 });
+
+ const swiper = new Swiper('.swiper', {
+    navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    spaceBetween: 20,
+    loop:true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+        slidesPerView: 3, // Nombre de diapositives visibles
+        spaceBetween: 30,  // Espacement entre les diapositives
+        breakpoints: {
+            // Responsive
+            640: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
     </script>
 </body>
 </html>

@@ -28,6 +28,8 @@
     </form>
     </section>
      <script>
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('debut').value = today;
         function calculerMontant() {
             const dateDebut = new Date(document.getElementById('debut').value);
             const dateFin = new Date(document.getElementById('fin').value);

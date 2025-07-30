@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -66,7 +68,7 @@
     </tr>
     </tbody>
     </table>
-    <table id="dashvoiture" class="table table-primary table-bordered mt-3 text-center align-middle" style="display:none">
+    <table id="dashvoiture" class="table table-dark table-bordered mt-3 text-center align-middle" style="display:none">
   <thead>
     <tr class="text-center align-middle">
       <th scope="col">ID</th>
@@ -105,7 +107,7 @@
     @endforeach
   </tbody>
 </table>
-    <table id="dashpaiement" class="table table-primary table-bordered mt-3 text-center align-middle" style="display:none">
+    <table id="dashpaiement" class="table table-dark table-bordered mt-3 text-center align-middle" style="display:none">
   <thead>
     <tr class="text-center align-middle">
       <th scope="col">Email</th>

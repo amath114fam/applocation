@@ -15,7 +15,7 @@
         @csrf
         <div class="user">
          <label id="lab" for="">Date de paiement</label>
-         <input type="date" name="datedepaiement">
+         <input type="date" id="payement" name="datedepaiement">
          <label for="">Montant</label>
          <input type="text" id="montant"  name="montant" readonly>
          <input type="hidden" class="statut" name="statut">
@@ -25,6 +25,9 @@
     </form>
     </section>
     <script>
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('payement').value = today;
+        
         document.addEventListener('DOMContentLoaded', () => {
             const montant = localStorage.getItem('montant');
             document.getElementById('montant').value = montant + 'FCFA';

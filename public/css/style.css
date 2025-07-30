@@ -124,14 +124,9 @@ a{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 /* ******************************************sectionvoiture***************************** */
-.voiture{
+.voiture {
     padding: 20px 80px;
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(auto-fit,minmax(17rem,1fr));
     background: #fff;
-    height: 100%;
-    gap: 1.5rem;
 }
 .cart-voiture{
     position: relative;
