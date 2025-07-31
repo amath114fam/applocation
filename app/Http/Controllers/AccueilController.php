@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Car;
 use App\Models\User;
 use App\Models\Accueil;
 use App\Models\Voiture;
+use App\Models\Location;
 use Illuminate\Http\Request;
 
 class AccueilController extends Controller
@@ -16,8 +18,9 @@ class AccueilController extends Controller
     public function index()
     {
         $cars=Car::all();
-        $matriculesFromCars = Voiture::pluck('matricule')->unique();
-        return view('accueil.index',compact('cars','matriculesFromCars'));
+        // $matriculesFromCars = Voiture::pluck('matricule')->unique();
+        $locations = Location::where('datefin', '>=', Carbon::today())->pluck('voitures_id')->toArray();
+        return view('accueil.index',compact('cars','locations'));
     }
 
     /**

@@ -33,6 +33,9 @@
             <li><a href="/login">Connexion</a></li>
             @endguest
             @auth
+            @if(auth()->user()->hasRole('admin'))
+            <li><a href="/dashboard">Tableau de bord</a></li>
+            @endif
             <li>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -82,7 +85,7 @@
                         <p><strong>Modèle: {{$car->modele}}</strong></p>
                         <p><strong>Matricule: {{$car->matricule}}</strong></p>
                         <p><strong>Prix: {{$car->prix}} FCFA</strong></p>
-                        @if($matriculesFromCars->contains($car->matricule))
+                        @if(in_array($car->id, $locations))
                         <p style="color:red"><strong>Voiture indisponible</strong></p>
                         <a>louer</a>
                         @else
