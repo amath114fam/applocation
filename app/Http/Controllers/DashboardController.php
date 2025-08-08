@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Car;
 use App\Models\Voiture;
 use App\Models\Location;
+use App\Models\Paiement;
 use App\Models\DashAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,17 +25,22 @@ class DashboardController extends Controller
          
         $userlocations = Location::with(['user','paiements'])->get();
 
+        $supervisionClients = Location::with(['user','paiements', 'voitures'])->orderBy('created_at', 'desc')->get();
+
         $cars=Car::all();
 
         $carNumber=Car::count();
+        $compte=Paiement::sum('montant');
+        $montantFormate = number_format($compte, 2, ',', ' ');
 
         $matriculesFromCars = Car::pluck('matricule');
 
-        $countMatricules = Voiture::whereIn('matricule', $matriculesFromCars)->count();
+        // $countMatricules = Voiture::whereIn('matricule', $matriculesFromCars)->count();
+        $countMatricules = Location::where('datefin', '>=', Carbon::today())->pluck('voitures_id')->count();
 
         $restCar= $carNumber - $countMatricules;
 
-        return view("accueil.look",compact('locations','user', 'cars', 'userlocations','carNumber','countMatricules','restCar'));
+        return view("accueil.look",compact('locations','user', 'cars', 'userlocations','carNumber','countMatricules','restCar','montantFormate','supervisionClients'));
     }
 
     /**

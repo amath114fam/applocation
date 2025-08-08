@@ -6,11 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="assets/images/baniere1.png">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <title>Document</title>
+    <title>FAM'S CARS</title>
 </head>
 <body>
     <div class="contentAdmin">
@@ -125,17 +126,52 @@
     @endforeach
   </tbody>
 </table>
-<div id="dash" class="guideAdmin">
-    <div class="car">
+<div id="dash" class="container text-center mt-3">
+  <div class="row g-2">
+    <div class="col-3 car me-5 mb-2">
+      <div class="p-3">
         <p><span class="badge text-bg-success">{{$carNumber}}</span><br> Voiture totales</p>
+      </div>
     </div>
-    <div class="car">
-        <p><span class="badge text-bg-warning">{{$countMatricules}}</span><br> Voitures en location</p>
+    <div class="col-3 car me-5  mb-2">
+      <div class="p-3"> <p><span class="badge text-bg-warning">{{$countMatricules}}</span><br> Voitures en location</p></div>
     </div>
-    <div class="car">
-        <p><span class="badge text-bg-secondary">{{$restCar}}</span><br> Voitures disponibles</p>
+    <div class="col-3 car me-5 mb-2">
+      <div class="p-3"> <p><span class="badge text-bg-secondary">{{$restCar}}</span><br> Voitures disponibles</p></div>
     </div>
-</div></div>
+    <div class="col-4 car">
+      <div class="p-3">
+      <p>Compte</p>
+     <h2><strong> {{$montantFormate}} FCFA</strong></h2></div>
+    </div>
+  </div>
+  <div class="card mt-5 col-12">
+    <h3 class="card-header">
+      Supervision des clients
+    </h3>
+    <table class="table  table-striped " >
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Voiture</th>
+      <th scope="col">Paiement</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($supervisionClients as $supervision)
+    <tr>
+      <th> {{$supervision->user->name}} </th>
+      <td>{{$supervision->user->email}}</td>
+      <td>{{$supervision->voitures->marque}}</td>
+      <td>{{$supervision->paiements->montant}}</td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+  </div>
+</div>
+</div>
 <script>
       const dashlocation=document.getElementById("dashlocation");
       const dashvoiture=document.getElementById("dashvoiture");
@@ -147,7 +183,7 @@
       const paimentClick=document.getElementById("paimentClick");
       const locationClick=document.getElementById("locationClick");
     alldash.addEventListener("click",()=>{
-        dash.style.display="flex"
+        dash.style.display="block"
         dashlocation.style.display="none"
         dashvoiture.style.display="none"
         dashpaiement.style.display="none"

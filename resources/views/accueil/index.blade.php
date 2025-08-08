@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="assets/images/baniere1.png">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -18,7 +19,7 @@
       });
    })();
 </script>
-    <title>Document</title>
+    <title>FAM'S CARS</title>
 </head>
 <body>
     <div class="nav">
@@ -224,15 +225,29 @@
   }
 
 
-  document.addEventListener('scroll', function() {
-    const img = document.querySelector('.propos img');
-    const imgPosition = img.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.9; 
+//   document.addEventListener('scroll', function() {
+//     const img = document.querySelector('.propos img');
+//     const imgPosition = img.getBoundingClientRect().top;
+//     const screenPosition = window.innerHeight / 1.9; 
+//     if (imgPosition < screenPosition) {
+//         img.classList.add('visible');
+//     }
+// });
+   document.addEventListener('scroll', function() {
+        const proposSection = document.getElementById('propo');
+        const textPropos = document.querySelector('.textPropos');
+        const img = document.querySelector('.propos img');
 
-    if (imgPosition < screenPosition) {
-        img.classList.add('visible');
-    }
-});
+        const sectionPosition = proposSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+
+        if (sectionPosition < screenPosition) {
+            textPropos.style.opacity = '1';
+            textPropos.style.transform = 'translateX(0)';
+            img.style.opacity = '1';
+            img.style.transform = 'translateX(0)';
+        }
+    });
 
  const swiper = new Swiper('.swiper', {
     navigation: {
@@ -246,7 +261,7 @@
       delay: 2500,
       disableOnInteraction: false,
     },
-        slidesPerView: 3, // Nombre de diapositives visibles
+        // slidesPerView: 3, // Nombre de diapositives visibles
         spaceBetween: 30,  // Espacement entre les diapositives
         breakpoints: {
             // Responsive
